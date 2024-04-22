@@ -33,3 +33,16 @@ streamlit run cookbook/llms/groq/research/app.py
 ### 5. Message on [discord](https://discord.gg/4MtYHHrgA8) if you have any questions
 
 ### 6. Star ⭐️ the project if you like it.
+
+### 7. Run with Docker
+
+```shell
+# Optionally Build the image
+docker build -t valeriusm/phidata-groq-research:latest .
+# Run the image
+docker run -d --name=phidata-groq \
+      --restart=unless-stopped \
+      -p 8501:8501 \
+      -e GROQ_API_KEY=<your api key> -e TAVILY_API_KEY=<your api key> \
+      valeriusm/phidata-groq-research:latest
+```
